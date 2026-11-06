@@ -1,0 +1,7 @@
+package com.cafeconnect.backend.repository;
+
+import com.cafeconnect.backend.entity.Category;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface CategoryRepository extends JpaRepository<Category, String> {
+}

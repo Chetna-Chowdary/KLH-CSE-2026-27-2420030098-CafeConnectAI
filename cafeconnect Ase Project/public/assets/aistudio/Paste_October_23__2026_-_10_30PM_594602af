@@ -1,0 +1,1147 @@
+# CAFE CONNECT — COMPLETE MASTER PROJECT PROMPT
+## Premium College Cafeteria Ordering, Intelligent Kitchen Queue, Inventory & Analytics Platform
+
+## 1. ROLE AND PROJECT OBJECTIVE
+
+Act as a senior software architect, expert React and TypeScript developer, UI/UX designer, database architect, and application workflow engineer.
+
+Build **Cafe Connect**, a premium college cafeteria food ordering and management platform.
+
+The application must serve three primary users:
+
+1. **Students/customers:** Browse food, customize items, add to cart, see realistic waiting times before checkout, order food, and track pickup.
+2. **Kitchen staff:** Receive orders, organize preparation, manage station workloads, update order status, and handle delays.
+3. **Administrators:** Manage products, prices, staff, inventory, restocking, operational alerts, sales analytics, and cafeteria settings.
+
+I want a complete, functional frontend prototype and a comprehensive MySQL database design with SQL scripts.
+
+### Important implementation boundaries
+
+- Build the complete frontend now.
+- Generate all SQL database scripts and documentation now.
+- I will review and execute the SQL scripts myself later.
+- **Never execute SQL scripts, connect to MySQL, create a database, run migrations, or modify a database.**
+- Do not build a real backend at this stage.
+- Do not require database credentials or a live database for the frontend to work.
+- Use realistic mock services and demo data.
+- Prepare clean service interfaces for my future Spring Boot backend and SQL integration.
+- Do not stop after creating a landing page or a visual mockup.
+- Build the actual pages, interactions, application workflows, database scripts, and documentation.
+
+First inspect the existing project and its dependencies. Preserve working code where possible. If the project does not exist, initialize a suitable frontend project.
+
+---
+
+# PART A — PREMIUM BRAND AND USER EXPERIENCE
+
+## 2. REFERENCE IMAGE AND DESIGN DIRECTION
+
+Use my attached Cafe Connect reference image as the primary design reference.
+
+The reference includes these ten screens:
+
+1. Landing page.
+2. Explore menu.
+3. South Indian category page.
+4. Product details with live waiting-time information.
+5. Cart with item-wise waiting times.
+6. Checkout.
+7. Order confirmation.
+8. Customer order tracking.
+9. Kitchen staff dashboard.
+10. Admin dashboard.
+
+In addition, build dedicated pages for:
+- Packaged snacks and chocolates.
+- Login and session management.
+- Inventory management.
+- Menu administration.
+- Kitchen station management.
+- Alerts and notifications.
+- Detailed analytics.
+- Order history.
+- Settings and staff management.
+
+Recreate the reference as actual responsive webpages. Never use the screenshot as a page background or substitute functional controls with an image.
+
+Improve the reference wherever needed to create a more sophisticated, cohesive, usable product.
+
+## 3. Luxury visual identity
+
+Create a distinctive premium café identity rather than a generic restaurant template.
+
+Use this color palette:
+
+- Deep Emerald: #102D26
+- Espresso Black: #211C18
+- Champagne Gold: #D6AD60
+- Pearl Ivory: #F5F0E6
+- Burnished Copper: #B96F45
+
+Apply the palette consistently:
+- Deep emerald for brand elements, navigation, and important actions.
+- Champagne gold for selective highlights and premium details.
+- Pearl ivory for readable menu and content surfaces.
+- Espresso black for text and dark operational areas.
+- Burnished copper for restrained secondary accents.
+
+Use elegant serif typography for selected hero headings and modern sans-serif typography for functional interfaces.
+
+Include:
+- Premium food photography.
+- Refined typography.
+- Subtle gradients.
+- Consistent spacing.
+- High-quality product cards.
+- Elegant category navigation.
+- Carefully designed icons.
+- Subtle micro-interactions.
+- Smooth but restrained transitions.
+- Premium buttons and form fields.
+- Clear order-status indicators.
+- Responsive layouts for desktop, tablet, mobile, and kiosk touchscreens.
+
+Avoid excessive gold, excessive rounded cards, distracting animation, unnecessary glassmorphism, low-contrast text, and oversized empty sections.
+
+The student-facing experience should feel inviting and luxurious. Kitchen and admin dashboards should prioritize speed, clarity, and usability during cafeteria rush hours.
+
+Use Lucide icons or an equivalent installed icon library. Use actual food imagery where possible, with graceful fallbacks.
+
+## 4. TECHNOLOGY STACK AND CODE QUALITY
+
+If starting from scratch, use:
+
+- React.
+- TypeScript.
+- Vite.
+- Tailwind CSS.
+- React Router.
+- Lucide icons.
+- Recharts for charts.
+- A suitable lightweight state-management solution.
+- React Hook Form and Zod where useful.
+
+Inspect existing dependencies before adding packages.
+
+Requirements:
+- Reusable components.
+- Typed application models.
+- Consistent design tokens.
+- Shared layouts.
+- Centralized configuration.
+- Shared mock data services.
+- Clear separation between UI and business logic.
+- API-ready service contracts.
+- Consistent error handling.
+- Accessible forms.
+- Responsive design.
+- No dead buttons or broken navigation.
+- No console errors or broken imports.
+
+Keep the code modular, maintainable, and suitable for future backend integration.
+
+---
+
+# PART B — STUDENT EXPERIENCE
+
+## 5. Premium landing page
+
+Build a visually memorable landing page featuring:
+
+- Cafe Connect branding and logo.
+- Full-width cinematic café imagery.
+- Headline: "Good Food. Brighter Days."
+- Supporting text about effortless campus food ordering.
+- Prominent Explore Menu and Order Now buttons.
+- Home, Menu, About, and Contact navigation.
+- Quick Ordering, Live Wait Time, Easy Pickup, and Freshly Prepared highlights.
+- Popular categories.
+- Bestsellers.
+- Daily specials.
+- Budget-friendly food.
+- Packaged snacks and chocolates.
+- Combo offers.
+- Cafeteria opening hours.
+- Pickup instructions.
+- A polished footer.
+
+The landing page must not obstruct the main task of ordering food.
+
+All navigation and CTA buttons must lead to working application routes.
+
+## 6. Complete food categories and menu
+
+Create a configurable food catalogue with the following sample products and prices.
+
+These are illustrative prices that the administrator can change.
+
+### A. South Indian
+
+- Plain Dosa — ₹40
+- Masala Dosa — ₹60
+- Mysore Masala Dosa — ₹70
+- Idli, two pieces — ₹30
+- Medu Vada, two pieces — ₹35
+- Podi Idli — ₹45
+- Uttapam — ₹55
+
+### B. Meals and Indian Fast Food
+
+- Veg Fried Rice — ₹80
+- Veg Noodles — ₹70
+- Paneer Roll — ₹80
+- Pav Bhaji — ₹70
+- Chole Kulche — ₹75
+- Veg Pulao — ₹70
+
+### C. Burgers, Sandwiches and Wraps
+
+- Veg Sandwich — ₹50
+- Grilled Cheese Sandwich — ₹65
+- Veg Burger — ₹70
+- Paneer Burger — ₹90
+- Aloo Tikki Burger — ₹60
+- Paneer Wrap — ₹80
+
+### D. Hot Snacks
+
+- Samosa — ₹20
+- Veg Puff — ₹25
+- French Fries — ₹60
+- Peri-Peri Fries — ₹75
+- Veg Spring Rolls — ₹50
+- Bread Pakora — ₹30
+
+### E. Packaged Snacks and Chocolates
+
+- Lays — ₹20
+- Bingo — ₹20
+- Kurkure — ₹20
+- Dairy Milk — ₹20
+- KitKat — ₹30
+- 5 Star — ₹20
+- Cookies — ₹20
+- Packaged Cake — ₹30
+
+### F. Tea and Hot Beverages
+
+- Masala Chai — ₹15
+- Filter Coffee — ₹25
+- Cappuccino — ₹60
+- Hot Chocolate — ₹60
+- Green Tea — ₹25
+
+### G. Cold Drinks
+
+- Bottled Water — ₹20
+- Packaged Soft Drink — ₹30
+- Fresh Lime Soda — ₹35
+- Lemon Iced Tea — ₹45
+- Mango Juice — ₹40
+- Cold Coffee — ₹60
+- Chocolate Milkshake — ₹70
+
+### H. Desserts and Bakery
+
+- Chocolate Brownie — ₹50
+- Chocolate Muffin — ₹40
+- Donut — ₹45
+- Croissant — ₹60
+- Pastry — ₹60
+
+### Menu requirements
+
+Implement:
+- Category browsing.
+- Product search.
+- Sorting by price, popularity, and preparation time.
+- Price filters.
+- Dietary filters where applicable.
+- Bestseller indicators.
+- Product details.
+- Customization options.
+- Quantity selectors.
+- Add-ons with configurable prices.
+- Combo offers.
+- Availability badges.
+- Sold-out states.
+- Under-₹50 filter.
+- Recently ordered items where session history permits.
+
+Each menu item must support:
+- Product ID.
+- Name and description.
+- Category.
+- Price in INR.
+- Image.
+- Availability.
+- Preparation duration.
+- Kitchen station.
+- Dietary tags.
+- Variants.
+- Add-ons.
+- Inventory references.
+- Active/inactive state.
+
+Store menu configuration centrally so the admin can modify the catalogue without editing UI components.
+
+## 7. Dedicated packaged snacks section
+
+Create a separate packaged snacks store page.
+
+Support:
+- Lays.
+- Bingo.
+- Kurkure.
+- Chocolates.
+- Cookies.
+- Packaged cakes.
+- Packaged drinks.
+- Configurable additional brands, sizes, and flavours.
+
+Features:
+- Product imagery.
+- SKU-level inventory.
+- Price and variant selection.
+- Search and filtering.
+- Quick add-to-cart.
+- Quantity adjustment.
+- Combo offers.
+- Sold-out indicators.
+- Bestselling snacks.
+
+Packaged products must use a picking or handoff duration, not a hot-kitchen cooking duration.
+
+For a mixed order, calculate readiness based on the required fulfilment tasks.
+
+## 8. Product details and customization
+
+Each product should have a detail page or modal containing:
+- Product image.
+- Name.
+- Description.
+- Price.
+- Availability.
+- Dietary information where configured.
+- Preparation station.
+- Preparation estimate.
+- Queue information.
+- Quantity selector.
+- Add-ons.
+- Customization controls.
+- Add to Cart button.
+- Related products.
+
+For dosas, allow optional chutney preferences, spice level, extra sambhar, and extra potato masala.
+
+Charge for add-ons only when their configured price is greater than zero.
+
+When a product is unavailable, disable checkout for that product and explain why.
+
+## 9. Guest checkout and session persistence
+
+**Students must be able to browse and order without being forced to create an account.**
+
+Implement:
+- Menu browsing without login.
+- Cart persistence across page refreshes.
+- Optional pickup name or college identifier.
+- Checkout with an itemized summary.
+- Estimated readiness before confirmation.
+- Configurable payment-method display.
+- Order confirmation.
+- Unique demo order ID and pickup number.
+- Active order tracking.
+- Session-based order history.
+
+Request customer identification only if necessary for the configured cafeteria policy.
+
+Use a storage adapter to persist the demo cart, session, and active orders.
+
+Do not create a duplicate order on refresh.
+
+Disable repeated submissions during checkout and simulate idempotency.
+
+Use a clearly labelled demo payment mode such as Pay at Counter. Do not claim real UPI or payment processing works without an actual provider.
+
+If a product becomes unavailable before checkout, ask the student to revise the cart.
+
+---
+
+# PART C — INTELLIGENT QUEUE AND WAITING TIME
+
+## 10. Core waiting-time engine
+
+This is one of the most important features of Cafe Connect.
+
+Students must see the waiting time while adding products to their cart, not only after checkout.
+
+### Example
+
+Suppose three dosa orders are already ahead of the student.
+
+When the student adds a Masala Dosa, display a message such as:
+
+"3 relevant orders ahead of you. Estimated preparation wait: 12–18 minutes."
+
+The estimate must be calculated from the mock queue, station workload, and preparation configuration. Do not hardcode the same wait time for every order.
+
+### Kitchen stations
+
+Configure independent stations such as:
+- Dosa and breakfast.
+- Hot meals.
+- Snacks and frying.
+- Beverages.
+- Packaged goods picking.
+
+Each station should have:
+- Station ID.
+- Preparation duration defaults.
+- Active capacity.
+- Batch capacity.
+- Current workload.
+- Availability status.
+- Maximum permitted workload.
+
+### Queue calculation
+
+The mock preparation estimator must consider:
+- Existing pending orders.
+- Orders already being prepared.
+- Remaining preparation time.
+- Number of active workers or preparation slots.
+- Station-specific workload.
+- Preparation durations.
+- Batch cooking.
+- Parallel work across independent stations.
+- Packaged-item picking time.
+- Station outages.
+- Opening hours.
+- Handoff time.
+- Delayed orders.
+- Configurable uncertainty buffers.
+
+For mixed orders, estimate each item's readiness independently and use the latest required fulfilment time as the overall order readiness estimate.
+
+Distinguish queue position from waiting time. Different products may use different stations.
+
+Recalculate estimates when:
+- Cart quantities change.
+- Items are added or removed.
+- A new mock order enters the queue.
+- Staff accept an order.
+- Preparation starts or completes.
+- An order is cancelled.
+- A station is paused or resumed.
+- A delay occurs.
+
+Display:
+- Estimated waiting range.
+- Expected ready time.
+- Relevant orders ahead.
+- Relevant station.
+- Last updated time.
+- A notice that estimates may change.
+
+Implement this in a dedicated, deterministic, testable queue-estimation service.
+
+Do not implement a naive rule that simply multiplies the number of orders ahead by a fixed number of minutes.
+
+The browser-based simulation is for the demo. The future backend must calculate the authoritative queue across all users.
+
+---
+
+# PART D — CUSTOMER ORDER TRACKING
+
+## 11. Order tracking and order history
+
+Create a complete order tracking page with this progression:
+
+Placed → Accepted → Preparing → Ready for Pickup → Completed.
+
+Include:
+- Order ID.
+- Pickup number.
+- Itemized order.
+- Total amount.
+- Order creation time.
+- Current status.
+- Estimated pickup time.
+- Relevant queue information.
+- Last status update.
+- Delay notice.
+- Cancellation eligibility.
+- Order history.
+
+Persist active demo orders across refreshes.
+
+The customer-facing tracker must update whenever kitchen staff change the order status in the shared mock service.
+
+Handle completed, cancelled, missing, and invalid order IDs gracefully.
+
+Do not require a repeated login merely to access an active demo order.
+
+---
+
+# PART E — KITCHEN STAFF PORTAL
+
+## 12. Kitchen login
+
+Create a separate, premium staff login page.
+
+Include:
+- Username or email.
+- Password.
+- Password visibility control.
+- Validation.
+- Loading state.
+- Clear errors.
+- Logout control.
+
+Use clearly documented mock credentials for the demo.
+
+After login, redirect staff to the kitchen dashboard.
+
+Maintain the demo session across navigation and refreshes until logout or configured expiry.
+
+Do not store plaintext real passwords or represent mock authentication as production-secure.
+
+## 13. Kitchen dashboard
+
+Build a functional, operational dashboard containing:
+- Incoming orders.
+- Accepted orders.
+- Preparing orders.
+- Ready-for-pickup orders.
+- Completed orders.
+- Cancelled orders.
+- Station-level queue.
+- Preparation timers.
+- Estimated versus actual preparation.
+- Delayed orders.
+- Station utilization.
+- Product availability controls.
+- Search and filtering.
+
+Each order card should show:
+- Order number.
+- Pickup number.
+- Time placed.
+- Items and quantities.
+- Customizations.
+- Special instructions.
+- Relevant station.
+- Current status.
+- Queue position.
+- Expected ready time.
+- Elapsed preparation time.
+
+Allow staff to:
+- Accept orders.
+- Start preparation.
+- Mark orders ready.
+- Mark orders collected.
+- Cancel permitted orders with a reason.
+- Flag delays.
+- Mark items unavailable.
+- Pause or resume stations.
+
+Implement valid status transitions. Prevent accidental double completion and invalid transitions.
+
+Changing order status must update:
+- Customer order tracking.
+- Queue workload.
+- Waiting-time estimates.
+- Order history.
+- Mock inventory consumption where appropriate.
+- Admin metrics and alerts.
+
+Make this interface usable during busy periods, with high-contrast statuses, large action targets, and minimal clicks.
+
+---
+
+# PART F — ADMIN LOGIN AND DASHBOARD
+
+## 14. Admin login and role-based access
+
+Create a separate administrator login and dashboard.
+
+For the prototype, implement mock authentication and frontend route guards.
+
+Provide configurable demo credentials and document them in the project README.
+
+After login, redirect administrators to the admin dashboard.
+
+Keep staff and admin permissions distinct in the UI.
+
+Important: frontend guards are not production authorization. The future backend must enforce access control on every protected API.
+
+## 15. Admin dashboard overview
+
+Display:
+- Total orders.
+- Today's revenue.
+- Average order value.
+- Completed orders.
+- Cancelled orders.
+- Average preparation time.
+- Delayed orders.
+- Low-stock products.
+- Bestselling items.
+- Station workload.
+
+Use realistic, internally consistent sample records.
+
+Clearly label simulated metrics as demo data.
+
+### Analytics charts
+
+Create interactive charts for:
+1. Hourly order volume.
+2. Daily revenue.
+3. Category-wise sales.
+4. Top-selling products.
+5. Weekday demand.
+6. Average preparation duration.
+7. Completion and cancellation rates.
+8. Inventory consumption.
+9. Stockout trends.
+10. Peak-hour demand.
+
+Provide date-range filters:
+- Today.
+- Last 7 days.
+- Last 30 days.
+- Custom date range where practical.
+
+Charts and KPI cards must respond to the selected filters.
+
+Include tooltips, readable legends, useful axis labels, and responsive layouts.
+
+Help the admin identify:
+- Bestselling items.
+- Slow-moving products.
+- Peak ordering periods.
+- Overloaded stations.
+- Categories contributing the most revenue.
+- Increasing preparation delays.
+- Frequently unavailable products.
+- Items requiring restocking.
+
+Use consistent metric definitions. Distinguish gross sales, net sales, refunds, and cancelled orders.
+
+## 16. Menu management
+
+Create admin forms to:
+- Add products.
+- Edit products.
+- Deactivate products.
+- Restore products.
+- Manage categories.
+- Update prices.
+- Update images.
+- Configure variants and add-ons.
+- Set preparation duration.
+- Assign kitchen stations.
+- Set availability.
+- Configure dietary tags.
+- Set inventory thresholds.
+
+Implement form validation, confirmations, success feedback, and error states.
+
+Menu changes must immediately affect the mock student menu.
+
+## 17. Inventory management
+
+Build an inventory module that supports both:
+- Packaged-product SKUs.
+- Ingredients used in prepared food.
+
+Each inventory item should contain:
+- ID.
+- Name.
+- Unit.
+- Current stock.
+- Reorder point.
+- Safety stock.
+- Average daily usage.
+- Supplier lead time.
+- Suggested reorder quantity.
+- Last restocked date.
+- Current stock status.
+
+Include:
+- In-stock, low-stock, critical-stock, and out-of-stock states.
+- Search and filters.
+- Stock adjustments with reasons.
+- Restock receipt simulation.
+- Stock movement history.
+- Ingredient-to-recipe mappings.
+- SKU-level packaged stock.
+- Reorder recommendations.
+- Alerts for predicted shortages.
+
+Use this baseline formula:
+
+Reorder point = average daily usage × supplier lead time + safety stock.
+
+Clearly distinguish current shortages from predicted shortages.
+
+Prevent negative stock in the mock implementation.
+
+When orders are completed, update the corresponding ingredient or packaged-product stock consistently according to the configured recipe and consumption policy.
+
+Do not deduct the same stock twice if an order is updated or processed again.
+
+## 18. Alerts and operational monitoring
+
+Create an alerts center for:
+- Low stock.
+- Critical stock.
+- Forecasted stockouts.
+- Station overload.
+- Long waiting times.
+- Delayed orders.
+- Ready orders not collected.
+- Product unavailability.
+- Sudden demand spikes.
+
+Each alert should include:
+- Severity.
+- Description.
+- Related product, order, or station.
+- Timestamp.
+- Read/unread status.
+- Suggested action.
+- Acknowledge or dismiss controls where appropriate.
+
+Use clear visual hierarchy and do not communicate severity through color alone.
+
+Generate alerts from configurable rules and shared mock data.
+
+## 19. Kitchen station management
+
+Allow the admin to configure:
+- Station name.
+- Station capacity.
+- Active preparation slots.
+- Batch size.
+- Preparation-time defaults.
+- Maximum workload.
+- Operating hours.
+- Delay warning thresholds.
+- Estimated-time buffers.
+- Availability and pause status.
+
+Changes must affect the mock queue estimator.
+
+When a station is unavailable, prevent inappropriate new orders and display a clear message to the student.
+
+---
+
+# PART G — IMPORTANT EDGE CASES
+
+## 20. Handle operational loopholes
+
+Implement and test these cases:
+
+1. Duplicate checkout submissions.
+2. Sold-out items during checkout.
+3. Insufficient inventory.
+4. Multiple products requiring different stations.
+5. Multiple orders competing for the same station.
+6. Station overload.
+7. Station outage.
+8. Delayed preparation.
+9. Cancelled orders.
+10. Orders ready but not collected.
+11. Cafeteria closing time.
+12. Invalid order status transitions.
+13. Page refresh during checkout or tracking.
+14. Session expiration.
+15. Invalid login credentials.
+16. Incorrect role attempting to access a protected page.
+17. Empty menu search results.
+18. No active kitchen orders.
+19. Inventory adjustment mistakes.
+20. Duplicate inventory deductions.
+21. Incorrect or inconsistent analytics totals.
+22. Failed mock service operations.
+23. Invalid customization selections.
+24. Products disabled by the admin.
+25. A cart containing an unavailable item.
+26. Orders exceeding configured capacity.
+27. Incorrect timezone or date-range boundaries.
+
+Provide useful error messages, recoverable states, confirmations, and clear next actions.
+
+Never silently discard a cart or create a duplicate order.
+
+---
+
+# PART H — SQL DATABASE DESIGN AND SCRIPT GENERATION
+
+## 21. Important: generate SQL but NEVER execute it
+
+Design a complete, normalized **MySQL 8.0+ database** for Cafe Connect.
+
+I will review and execute the scripts myself later.
+
+**ABSOLUTE RESTRICTIONS:**
+- Do not execute any SQL.
+- Do not connect to MySQL.
+- Do not create a database through a running database server.
+- Do not run migrations.
+- Do not run schema synchronization tools.
+- Do not execute seed scripts.
+- Do not modify any database.
+- Do not run commands that apply SQL to a database.
+- Generate files and documentation only.
+
+It is acceptable to inspect the SQL files as text and validate their consistency without connecting to a database.
+
+Use MySQL-compatible syntax, InnoDB, appropriate foreign keys, constraints, indexes, DECIMAL monetary fields, and consistent naming conventions.
+
+Prepare the design for a future Spring Boot backend.
+
+## 22. Generate these SQL files
+
+Create the directory `database/sql/` and generate:
+
+1. `01_create_database.sql`
+2. `02_create_tables.sql`
+3. `03_seed_reference_data.sql`
+4. `04_seed_demo_data.sql`
+5. `05_indexes_and_constraints.sql`
+6. `06_reporting_queries.sql`
+7. `README.md`
+8. `ER_DIAGRAM.md`
+9. `DATA_DICTIONARY.md`
+10. `BACKEND_INTEGRATION.md`
+
+Keep setup scripts safe and repeatable where practical. Explain any non-idempotent statements.
+
+Avoid destructive operations such as dropping tables or deleting existing data in normal setup scripts.
+
+Do not include plaintext passwords, production credentials, or secrets in seed files.
+
+## 23. Required SQL tables and relationships
+
+### Identity and access
+- users
+- roles
+- user_roles if a many-to-many role model is used
+- staff profiles where appropriate
+- session or refresh-token metadata where appropriate
+
+### Menu
+- categories
+- menu_items
+- product_variants
+- add_ons
+- menu_item_add_ons
+- dietary_tags
+- menu_item_dietary_tags
+- combo_offers
+- combo_components
+
+### Orders
+- orders
+- order_items
+- order_item_customizations
+- payments or payment records for future integration
+- refunds where appropriate
+- order_status_history
+- cancellation records where appropriate
+
+### Kitchen and queue
+- kitchen_stations
+- station configuration
+- order preparation tasks
+- task-to-station assignments
+- preparation status and timestamps
+- operational events or delay records where useful
+
+### Inventory
+- inventory_items
+- product_inventory mappings
+- recipes
+- recipe ingredients
+- stock movements
+- suppliers
+- purchase orders
+- purchase order items
+- restock records where appropriate
+
+### Administration and reporting
+- application settings
+- operational alerts
+- inventory alerts
+- notification preferences or delivery records where appropriate
+- audit logs for important changes
+
+Use appropriate normalization and explain any intentional denormalization.
+
+Avoid creating unnecessary tables solely to duplicate values that can be derived efficiently.
+
+## 24. SQL integrity requirements
+
+Define:
+- Primary keys.
+- Foreign keys.
+- Unique constraints.
+- Useful indexes.
+- Appropriate nullability.
+- Appropriate deletion policies.
+- Status constraints where compatible.
+- Timestamps and audit fields.
+
+Important relationships include:
+- One order containing multiple items.
+- Order items preserving historical product names and prices.
+- Customizations preserving their purchase-time prices.
+- Products belonging to categories.
+- Ingredients mapped to recipes and inventory.
+- Packaged products tracked by SKU.
+- Orders containing tasks at different kitchen stations.
+- Stock movements recording every meaningful inventory adjustment.
+- Orders retaining history when a product is deactivated.
+- Status history preserving important order transitions.
+- Restock records linked to suppliers or purchase orders when appropriate.
+
+Use soft deletion or deactivation for records whose historical references must remain valid.
+
+Document how the future backend should use transactions, locking, conditional updates, and idempotency to prevent:
+- Duplicate orders.
+- Overselling.
+- Negative stock.
+- Conflicting inventory deductions.
+- Inconsistent queue processing.
+
+## 25. Database support for intelligent waiting times
+
+The database must support:
+- Order placement timestamps.
+- Acceptance timestamps.
+- Preparation start timestamps.
+- Ready timestamps.
+- Pickup/completion timestamps.
+- Station assignments.
+- Estimated and actual durations.
+- Station capacity settings.
+- Batch preparation configuration.
+- Station unavailability.
+- Delays and operational events.
+
+Document which values should be persisted and which should be recalculated.
+
+Do not rely on auto-incrementing IDs as queue positions.
+
+Do not permanently treat an estimated wait as an authoritative value. The future backend must recalculate estimates as workload changes.
+
+## 26. Database support for analytics and inventory
+
+The SQL design must support reports for:
+- Revenue by day and hour.
+- Total and completed orders.
+- Average order value.
+- Bestselling products.
+- Category-wise sales.
+- Peak ordering periods.
+- Average preparation duration.
+- Cancellation rates.
+- Inventory consumption.
+- Low-stock alerts.
+- Forecasted stockouts.
+- Suggested reorder quantities.
+- Supplier lead times.
+- Stock movement history.
+
+Include representative SELECT queries in `06_reporting_queries.sql`.
+
+Write those queries to a file only. Never execute them.
+
+Include a Mermaid ER diagram and a table-by-table data dictionary.
+
+Document the execution order of the scripts and the assumptions I should review before running them.
+
+---
+
+# PART I — FRONTEND AND SQL INTEGRATION ARCHITECTURE
+
+## 27. Suggested project structure
+
+Keep the frontend modular, for example:
+
+src/
+- app/
+- components/
+- layouts/
+- pages/
+- features/
+  - auth/
+  - menu/
+  - cart/
+  - checkout/
+  - orders/
+  - kitchen/
+  - admin/
+  - inventory/
+  - analytics/
+  - alerts/
+- services/
+- hooks/
+- types/
+- config/
+- utils/
+
+database/
+- sql/
+  - 01_create_database.sql
+  - 02_create_tables.sql
+  - 03_seed_reference_data.sql
+  - 04_seed_demo_data.sql
+  - 05_indexes_and_constraints.sql
+  - 06_reporting_queries.sql
+  - README.md
+  - ER_DIAGRAM.md
+  - DATA_DICTIONARY.md
+  - BACKEND_INTEGRATION.md
+
+Adjust this structure if the existing project has a good architecture.
+
+## 28. Typed frontend models
+
+Create TypeScript interfaces for:
+- User and role.
+- Category.
+- Menu item.
+- Product variant.
+- Add-on.
+- Cart item.
+- Order.
+- Order item.
+- Order status.
+- Kitchen station.
+- Preparation task.
+- Preparation estimate.
+- Inventory item.
+- Recipe.
+- Stock movement.
+- Supplier.
+- Purchase order.
+- Alert.
+- Analytics result.
+
+Keep these models compatible with the proposed database and future Spring Boot DTOs.
+
+## 29. API-ready service layer
+
+Create service contracts for:
+- Authentication.
+- Menu.
+- Cart and checkout.
+- Order creation and retrieval.
+- Order status updates.
+- Queue estimation.
+- Kitchen operations.
+- Inventory.
+- Analytics.
+- Alerts.
+- Staff management.
+
+Provide mock implementations for the current frontend.
+
+Use consistent request and response structures.
+
+Keep UI components independent of the implementation.
+
+When I later add the Spring Boot backend, I should be able to replace mock services with HTTP API implementations without rewriting the entire frontend.
+
+Do not connect directly to SQL from React.
+
+Never expose database credentials or privileged secrets in browser code.
+
+Document suggested REST endpoints and the mapping between frontend models, backend DTOs, and SQL tables.
+
+---
+
+# PART J — TESTING AND DELIVERY
+
+## 30. Mandatory end-to-end demo workflows
+
+Before declaring completion, run the frontend and resolve build errors.
+
+Test these workflows:
+
+1. Browse the landing page without logging in.
+2. Navigate to every food category.
+3. Search, filter, and sort products.
+4. Customize a dosa and add it to the cart.
+5. Add coffee and packaged snacks.
+6. Verify quantities and totals.
+7. Verify different stations produce different waiting-time estimates.
+8. Simulate three dosa orders ahead of another order.
+9. Recalculate estimates after cart and queue changes.
+10. Complete checkout and generate a demo order ID.
+11. Refresh the page and restore the active order.
+12. Log in as kitchen staff.
+13. Update an order through valid statuses.
+14. Verify the customer tracking page updates.
+15. Log in as admin.
+16. Edit a product and change its availability.
+17. Verify the student menu responds.
+18. Trigger a low-stock alert.
+19. Record a mock restock.
+20. Verify inventory and alert history.
+21. Change analytics date ranges.
+22. Verify charts and metrics update.
+23. Test station overload and station closure.
+24. Test duplicate checkout submission.
+25. Test invalid state transitions.
+26. Test invalid login and protected routes.
+27. Test mobile responsiveness.
+28. Check for console errors and broken navigation.
+29. Inspect SQL scripts as text for consistency without executing them.
+30. Confirm no database connections, migrations, or SQL execution occurred.
+
+## 31. Final deliverables
+
+Provide:
+- Complete working React frontend.
+- Landing page and menu.
+- Product detail and customization flows.
+- Packaged snacks page.
+- Cart and checkout.
+- Customer order tracking.
+- Kitchen login and dashboard.
+- Admin login and dashboard.
+- Menu management.
+- Inventory management.
+- Analytics charts.
+- Alerts center.
+- Persistent mock sessions and demo orders.
+- Intelligent queue estimation simulation.
+- Reusable components and typed service contracts.
+- All requested SQL scripts and documentation.
+- Mermaid ER diagram.
+- Data dictionary.
+- Suggested REST API contracts.
+- Setup and run instructions.
+- Documented demo credentials.
+- Explanation of simulated features.
+- Future SQL and backend integration instructions.
+- A list of remaining limitations.
+
+Use coherent sample records across the menu, orders, kitchen queue, inventory, and analytics.
+
+Do not leave broken buttons, placeholder pages, unrelated dashboard numbers, or core features implemented only as static screenshots.
+
+### Final instruction
+
+Build Cafe Connect as a complete, polished, luxurious, connected application.
+
+Prioritize the premium UI, effortless student ordering, accurate mock waiting-time logic, kitchen operational workflows, useful admin analytics, intelligent stock alerts, and clean SQL-ready architecture.
+
+**Generate the complete SQL files, but do not execute them. I will review and run them manually later.**

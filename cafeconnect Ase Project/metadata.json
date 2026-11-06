@@ -1,0 +1,6 @@
+{
+  "name": "Cafe Connect",
+  "description": "Premium college cafeteria food ordering, intelligent kitchen queue, inventory and analytics platform.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
